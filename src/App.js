@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { addNumber, minusNumber } from "./redux/modules/counter";
 
 const App = () => {
@@ -10,14 +9,14 @@ const App = () => {
 
   const onChangeHandler = (e) => {
     const { value } = e.target;
-    setNumber(+value); // 문자열이므로 숫자형으로 바꾸기 위해 + 넣음
+    setNumber(+value);
   };
 
-  const onClickAddNumberHandler = () => {
+  const onClickAddNumberHandler = (e) => {
     dispatch(addNumber(number));
   };
 
-  const onClickMinusNumberHandler = () => {
+  const onClickMinusNumberHandler = (e) => {
     dispatch(minusNumber(number));
   };
 
